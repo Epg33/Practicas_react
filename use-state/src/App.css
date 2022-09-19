@@ -1,0 +1,21 @@
+
+
+input{
+  color: orange;
+  width: 10%;
+  line-height: 100px;
+  margin: 6px;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid black;
+  outline: none;
+  font-size: 2rem;
+}
+
+.caja{
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+

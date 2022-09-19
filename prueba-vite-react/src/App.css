@@ -1,0 +1,45 @@
+span {
+    color: red;
+}
+
+.album {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+}
+
+.carta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5%;
+    margin: 3%;
+}
+
+.nombres {
+    display: flex;
+    flex-direction: row;
+    height: 20vh;
+    width: auto;
+    justify-content: space-between;
+}
+
+.name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.name button {
+    height: 25%;
+}
+
+.contador {
+    user-select: none;
+    cursor: default;
+}
