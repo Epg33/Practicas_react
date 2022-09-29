@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react'
+import React, {useMemo} from 'react'
 
 function index() {
   return (
