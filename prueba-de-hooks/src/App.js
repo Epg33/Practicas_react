@@ -1,4 +1,5 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Nav from './Nav'
 import UseCallback from './useCallback/index'
 import UseDebugValue from './useDebugValue/index'
 import UseDefferredValue from './useDeferredValue/index'
@@ -14,6 +15,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <Nav />
         <Routes>
           <Route path='/usecallback' element={<UseCallback />}></Route>
           <Route path='/usedebugvalue' element={<UseDebugValue />}></Route>
