@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.hooksNav {
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #111;
+}
+
+.hooksLinks {
+  text-decoration: none;
+  color: #eee;
+  width: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.hooksLinks:hover{
+  background-color: #24f;
+  color: #eee;
+}

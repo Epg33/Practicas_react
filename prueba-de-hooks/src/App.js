@@ -8,7 +8,7 @@ import UseImperativeHandle from './useImperativeHandle/index'
 import UseInsertionEffect from './useInsertionEffect/index'
 import UseLayoutEffect from './useLayoutEffect/index'
 import UseMemo from './useMemo/index'
-import UseSyncExtternalStore from './useSyncExternalStore'
+import UseSyncExtternalStore from './useSyncExternalStore/index'
 import UseTransition from './useTransition/index'
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
       <BrowserRouter>
       <Nav />
         <Routes>
+          <Route path='/' element={<h1>Prueba de hooks</h1>}></Route>
           <Route path='/usecallback' element={<UseCallback />}></Route>
           <Route path='/usedebugvalue' element={<UseDebugValue />}></Route>
           <Route path='/usedefferredvalue' element={<UseDefferredValue />}></Route>
