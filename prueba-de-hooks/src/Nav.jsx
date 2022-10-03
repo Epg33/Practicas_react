@@ -6,6 +6,8 @@ function Nav() {
   return (
     <>
       <nav className='hooksNav'>
+          <NavLink className='hooksLinks' to='/lazy'>Lazy</NavLink>
+          <NavLink className='hooksLinks' to='/memo'>Memo</NavLink>
           <NavLink className='hooksLinks' to='/usecallback'>useCallback</NavLink>
           <NavLink className='hooksLinks' to='/usedebugvalue'>useDebugValue</NavLink>
           <NavLink className='hooksLinks' to='/usedefferredvalue'>useDeferredValue</NavLink>

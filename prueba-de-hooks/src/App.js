@@ -1,5 +1,7 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Nav from './Nav'
+import Lazy from './lazy/Index'
+import Memo from './memo/Index'
 import UseCallback from './useCallback/Index'
 import UseDebugValue from './useDebugValue/Index'
 import UseDefferredValue from './useDeferredValue/Index'
@@ -18,6 +20,8 @@ function App() {
       <Nav />
         <Routes>
           <Route path='/' element={<h1>Prueba de hooks</h1>}></Route>
+          <Route path='/lazy' element={<Lazy />}></Route>
+          <Route path='/memo' element={<Memo />}></Route>
           <Route path='/usecallback' element={<UseCallback />}></Route>
           <Route path='/usedebugvalue' element={<UseDebugValue />}></Route>
           <Route path='/usedefferredvalue' element={<UseDefferredValue />}></Route>
