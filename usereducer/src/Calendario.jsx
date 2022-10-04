@@ -1,5 +1,11 @@
 import React, { useReducer } from "react";
 
+const types = {
+  masM:"masM", 
+  menosM: "menosM",
+  masA: "masA",
+  menosA: "menosA"
+}
 const currentTime = new Date();
 const month = currentTime.getMonth();
 const year = currentTime.getFullYear();
@@ -11,16 +17,16 @@ const reducer = (state, action) => {
   let newMonth = state.m;
   let newYear = state.a;
   switch(action.type){
-    case "masM":
+    case types.masM:
       newMonth=newMonth===11? 0 : newMonth+1;
       break;
-    case "menosM":
+    case types.menosM:
       newMonth=newMonth===0? 11 : newMonth-1;
       break;   
-    case "masA":
+    case types.masA:
       newYear=newYear+1;
       break;  
-    case "menosA":
+    case types.menosA:
       newYear= newYear-1;
       break 
   }
@@ -31,14 +37,18 @@ function Calendario() {
   const [fecha, dispatch] = useReducer(reducer, valorInicial);
   return (
     <>
-      {meses[fecha.m]} ({fecha.a})
-      <div>
-        Meses: <button onClick={()=>dispatch({type: "masM"})}>+</button>
-        <button onClick={()=>dispatch({type: "menosM"})}>-</button>
+      <div style={
+        (fecha.m< month && fecha.a < year || fecha.a<year)?
+        {color: "red"} : {color: "green"}}>
+        {meses[fecha.m]} ({fecha.a})
       </div>
       <div>
-        Años: <button onClick={()=>dispatch({type: "masA"})}>+</button>
-        <button onClick={()=>dispatch({type: "menosA"})}>-</button>
+        Meses: <button onClick={()=>dispatch({type: types.masM})}>+</button>
+        <button onClick={()=>dispatch({type: types.menosM})}>-</button>
+      </div>
+      <div>
+        Años: <button onClick={()=>dispatch({type: types.masA})}>+</button>
+        <button onClick={()=>dispatch({type: types.menosA})}>-</button>
       </div>
     </>
   );
