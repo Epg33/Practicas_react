@@ -5,12 +5,26 @@
 
 import React, {useReducer, useState, useRef} from 'react'
 
-function Compra() {
+const types = {
+  agregar: "agregar",
+  sumar: "sumar",
+  restar: "restar",
+  eliminar: "eliminar"
+}
 
+const initValue = [];
+
+const reducer = (state, action) => {
+
+}
+
+function Compra() {
+  const product = useRef()
+  const [state, dispatch] = useReducer(reducer, initValue)
   return (
     <>
       <label htmlFor='search-product'>Producto: </label>
-      <input type='text' />
+      <input type='text' ref={product}/>
       <button>Añadir</button>
       <div>
 
