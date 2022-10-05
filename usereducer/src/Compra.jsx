@@ -12,22 +12,39 @@ const types = {
   eliminar: "eliminar"
 }
 
-const initValue = [];
+const initValue = [''];
 
-const reducer = (state, action) => {
-
-}
 
 function Compra() {
+  const cleanInput = () =>{
+    product.current.textContent = '';
+  }
+
+  let newState = []
+  const reducer = (state, action) => {
+    
+    switch(action.type){
+      case types.agregar: newState.push(
+        <div>
+          <h4>{product.current.value}</h4>
+          <p>(unidades: )</p>
+          <button>+</button>
+          <button>-</button>
+          <button>X</button>
+        </div>)
+    }
+    return [...state, newState]
+  }
+  
   const product = useRef()
   const [state, dispatch] = useReducer(reducer, initValue)
   return (
     <>
       <label htmlFor='search-product'>Producto: </label>
       <input type='text' ref={product}/>
-      <button>Añadir</button>
+      <button onClick={()=>dispatch({type: types.agregar})}>Añadir</button>
       <div>
-
+        {state}
       </div>
     </>
   )
