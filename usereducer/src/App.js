@@ -1,5 +1,6 @@
 import Calendario from './Calendario'
 import Compra from './Compra';
+import CompraB from './CompraB';
 
 function App() {
   return (
@@ -8,6 +9,8 @@ function App() {
       <Calendario />
       <h1>Actividad del useReducer</h1>
       <Compra />
+      <hr/>
+      <CompraB />
     </>
   );
 }
