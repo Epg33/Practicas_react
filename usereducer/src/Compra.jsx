@@ -2,7 +2,6 @@
 // o decrementar y eliminar el producto con los botones que este tenga, ademas se debe agregar 
 // cualquier producto que se ingrse a traves del input, el cual debe quedar libre luego de agregar
 // un producto
-import Producto from './Producto';
 import React, {useReducer, useState, useRef} from 'react'
 
 const types = {
@@ -12,7 +11,7 @@ const types = {
   eliminar: "eliminar"
 }
 
-const initValue = [''];
+const initValue = [];
 
 
 function Compra() {
@@ -21,17 +20,16 @@ function Compra() {
   // }
 
   let newState = []
-  const reducer = (state, action) => {
+  const reducer =  (state, action) => {
     switch(action.type){
       case types.agregar: newState.push(
-        // <div key={Math.round(Math.random()*1e15)}>
-        //   <h4>{product.current.value}</h4>
-        //   <p>(unidades: {0})</p>
-        //   <button onClick={0}>+</button>
-        //   <button>-</button>
-        //   <button onClick={()=>state.splice(action.payload-1, 1)}>X</button>
-        // </div>
-        <Producto key={Math.round(Math.random()*1e15)} props={{name: product.current.value, state,action}} />
+        <div key={Math.round(Math.random()*1e15)}>
+          <h4>{product.current.value}</h4>
+          <p>(unidades: {action.number})</p>
+          <button onClick={()=>alert('nose')}>+</button>
+          <button onClick={()=>action.number = action.number-1}>-</button>
+          <button onClick={()=>{state.splice(action.payload, 1); console.log(newState)}}>X</button>
+        </div>
         )
         console.log(index);   
     }
@@ -44,7 +42,7 @@ function Compra() {
     <>
       <label htmlFor='search-product'>Producto: </label>
       <input type='text' ref={product}/>
-      <button onClick={()=>{dispatch({type: types.agregar, payload: index}); setIndex(index+1)}}>Añadir</button>
+      <button onClick={()=>{dispatch({type: types.agregar, number: 0,  payload: index}); setIndex(index+1)}}>Añadir</button>
       <div>
         {state}
       </div>
