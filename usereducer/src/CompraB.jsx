@@ -24,6 +24,8 @@ function CompraB() {
           {...cosa, cantidad: cosa.cantidad+1}
           :cosa
         })
+      case types.eliminar:
+        return state.filter(valor => valor.id !== action.payload )
     }
     return state;
   }
