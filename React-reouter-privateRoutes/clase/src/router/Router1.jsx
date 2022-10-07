@@ -2,6 +2,7 @@ import React from 'react'
 import {Route, Routes} from 'react-router-dom'
 import Login from '../paginas/Login'
 import Recuperacion from '../paginas/Recuperacion'
+import Router2 from './Router2'
 
  
 const Router1 = () => {

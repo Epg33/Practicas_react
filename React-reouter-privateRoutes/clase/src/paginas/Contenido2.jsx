@@ -4,7 +4,7 @@ function Contenido2() {
   return (
     <>
       <h1>Contenido 2</h1>
-      <h3>Primer apartado</h3>
+      <h3>Segundo apartado</h3>
     </>
   )
 }

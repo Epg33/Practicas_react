@@ -1,9 +1,10 @@
+import Router1 from "./router/Router1";
 
 
 function App() {
   return (
     <>
-
+      <Router1 />
     </>
   );
 }
