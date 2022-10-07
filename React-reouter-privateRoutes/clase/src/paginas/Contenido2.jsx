@@ -1,0 +1,12 @@
+import React from 'react'
+
+function Contenido2() {
+  return (
+    <>
+      <h1>Contenido 2</h1>
+      <h3>Primer apartado</h3>
+    </>
+  )
+}
+
+export default Contenido2
