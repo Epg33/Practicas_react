@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from '../../styles/Navigation.module.css'
+import styles from '../styles/Navigation.module.css'
 
 const Links = [{
   label: 'Home',
@@ -8,6 +8,10 @@ const Links = [{
 {
   label: 'About',
   route: '/about'
+},
+{
+  label: 'Posts',
+  route: '/posts'
 }]
 
 export default function Navigation () {
