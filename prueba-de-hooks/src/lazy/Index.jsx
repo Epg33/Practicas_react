@@ -1,4 +1,4 @@
-import {Suspense, lazy, useState} from 'react'
+import {Suspense, lazy} from 'react'
 import skull from '../assets/skull.jpg';
 import {LazyLoadImage} from 'react-lazy-load-image-component'
 
