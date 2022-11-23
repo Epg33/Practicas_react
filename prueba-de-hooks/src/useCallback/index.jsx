@@ -1,23 +1,31 @@
-import React, { useCallback, useRef, useState } from "react";
+import { useState, useCallback, useRef } from "react";
+import Todos from "./Todos";
 
-function Index() {
-  const [count, setCount] = useState([]);
-  const num = useRef();
-  const add = () => {
-    console.log(num.current.value);
-    setCount((c) => [...c, num.current.value]);
+const Index = () => {
+  const [count, setCount] = useState(0);
+  const [todos, setTodos] = useState([]);
+  const newest = useRef();
+
+  const increment = () => {
+    setCount((c) => c + 1);
   };
+
+  const addTodo = useCallback(() => {
+    setTodos(() => [...todos, newest.current.value ? newest.current.value :"New Todo"]);
+  }, [todos]);
+
   return (
     <>
-      <div style={{display:'flex', flexDirection:'column'}}>
-        <div>{count.map(c=>{
-          return <div>{c}</div>
-        })}</div>
-        <input type="number" ref={num} />
-        <button onClick={add}>+</button>
+      <Todos todos={todos} addTodo={addTodo} />
+      <hr />
+      <div>
+        Count: {count}
+        <button onClick={increment}>+</button>
+        <input type='text' ref={newest} />
+        <button onClick={addTodo}>add</button>
       </div>
     </>
   );
-}
+};
 
 export default Index;
