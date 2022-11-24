@@ -1,5 +1,6 @@
 import { useState, useCallback, useRef } from "react";
 import Todos from "./Todos";
+import { Json } from "./Json";
 
 const Index = () => {
   const [count, setCount] = useState(0);
@@ -24,6 +25,17 @@ const Index = () => {
         <input type='text' ref={newest} />
         <button onClick={addTodo}>add</button>
       </div>
+      <hr/>
+      <hr/>
+      <hr/>
+      <hr/>
+      <hr/>
+      <hr/>
+      <hr/>
+      <hr/>
+      <hr/>
+      <hr/>
+      <Json />
     </>
   );
 };
