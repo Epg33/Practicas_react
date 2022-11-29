@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const fetchSinglePost = (id) => {
   
   return fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
@@ -15,6 +17,7 @@ export default async function Post ({ params }) {
   return <article>
     <h1>{post.title}</h1>
     <h1>{post.body}</h1>
+    <Link href={`/posts/${id}/comments`}>Ver Comentarios</Link>
   </article>
 }
 
