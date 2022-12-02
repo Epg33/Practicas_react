@@ -3,20 +3,31 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
+import PageLayout from "../components/PageLayout";
+import { useState, useEffect } from "react";
 
 export default function Home() {
-  const router = useRouter()
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>News App - Home</title>
-      </Head>
+  const [articles, setArticles] = useState([]);
 
-      <h1>Aprendiendo Next js</h1>
-      <Link href='/about'>about</Link>
-      <button onClick={()=>router.push('/article/2')}>
-        Navegacion programatica 
-      </button>
-    </div>
+  useEffect(()=>{
+    fetch('https://newsapi.org/v2/everything?q=tesla&from=2022-11-02&sortBy=published&apiKey=b5dbd67693af4df080df4680eb8b164b')
+      .then(res => res.json())
+      .then(response => {
+        setArticles(response.articles)
+      })
+  }, [])
+  return (
+    <PageLayout title="NewsApp - Home">
+      <div className={styles.container}>
+        {articles.length=== 0 && <p>Loading...</p>}
+        {articles.length > 0 && articles.map((article, index) => {
+          return <article key={index}>
+            <img alt={`Image for the article ${article.title}`} src={article.urlToImage} />
+            <h2>{article.title}</h2>
+            <p>{article.description}</p>
+          </article>
+        })}
+      </div>
+    </PageLayout>
   );
 }
