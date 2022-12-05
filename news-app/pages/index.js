@@ -24,7 +24,7 @@ export default function Home({ articles }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const response = await fetch('https://newsapi.org/v2/everything?q=tesla&from=2022-12-02&sortBy=published&apiKey=b5dbd67693af4df080df4680eb8b164b')
   const {articles} = await response.json()
   return {
@@ -33,3 +33,13 @@ export async function getServerSideProps() {
     }
   }
 }
+
+// export async function getServerSideProps() {
+//   const response = await fetch('https://newsapi.org/v2/everything?q=tesla&from=2022-12-02&sortBy=published&apiKey=b5dbd67693af4df080df4680eb8b164b')
+//   const {articles} = await response.json()
+//   return {
+//     props: {
+//       articles
+//     }
+//   }
+// }
