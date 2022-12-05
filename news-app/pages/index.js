@@ -14,7 +14,7 @@ export default function Home({ articles }) {
         {articles.length=== 0 && <p>No tenemos articulos</p>}
         {articles.length > 0 && articles.map((article, index) => {
           return <article key={index}>
-            <img alt={`Image for the article ${article.title}`} src={article.urlToImage} />
+            <Image alt={`Image for the article ${article.title}`} width={450} height={300} src={article.urlToImage} />
             <h2>{article.title}</h2>
             <p>{article.description}</p>
           </article>
