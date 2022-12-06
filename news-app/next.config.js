@@ -2,9 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
+    domains:["media.cnn.com",],
     remotePatterns: [
       {
-        protocol: "**",
+        protocol: "https",
         hostname: "**",
         port: "**",
         pathname: "**",
