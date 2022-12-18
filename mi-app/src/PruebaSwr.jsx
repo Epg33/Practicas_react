@@ -29,7 +29,7 @@ const PruebaSwr = () => {
           return <div key={movie.id}>
             <h2>{movie.title}</h2>
             <img style={{width: '30%', height: 'auto'}} src={`https://www.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`} alt='movie cover' />
-            <spas>rate: {movie.vote_average}</spas>
+            <span>rate: {movie.vote_average}</span>
           </div>
         })
       }
