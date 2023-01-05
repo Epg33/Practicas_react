@@ -1,7 +1,7 @@
-import axios from "axios"
+import axios, { Axios, AxiosResponse } from "axios"
 
-export const getList = async () => {
-  const data = await axios.get('https://api.giphy.com/v1/gifs/search?api_key=VheOOBBewWsnwHzrfrAbrhAxU46QeNLW&q=cats&limit=20&offset=0&rating=g&lang=en')
+export const getList = async ():Promise<AxiosResponse<any, any>> => {
+  const data = await axios.get('https://picsum.photos/v2/list?page=1&limit=30')
   console.log(data);
   return data;
 }
