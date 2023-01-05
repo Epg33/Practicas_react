@@ -1,13 +1,15 @@
 import axios, { Axios, AxiosResponse } from "axios"
 
-export const getList = async (page:Number):Promise<AxiosResponse<any, any>> => {
-  try{
-    const res = await axios.get(`https://picsum.photos/v2/list?page=${page}&limit=30`)
+type Response = {
+  res: AxiosResponse<any, any>,
+  next: number
+}
+
+export const getList = async ({pageParam=1}):Promise<Response> => {
+    const res = await axios.get(`https://picsum.photos/v2/list?page=${pageParam}&limit=30`)
     console.log(res);
-    return res;
-  }
-  catch(err:any){
-    console.log(err)
-    return err
-  }
+    return {
+      res: res,
+      next: pageParam+1
+    };
 }
