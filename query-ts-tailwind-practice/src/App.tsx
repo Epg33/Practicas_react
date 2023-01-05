@@ -1,6 +1,14 @@
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { List } from './pages'
+import Test from './Test.jsx'
+
 function App() {
   return (
-    <h1 className='text-3xl text-red-700 font-bold'>Hello World</h1>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Test />}></Route>
+      </Routes>
+    </Router>  
   )
 }
 
