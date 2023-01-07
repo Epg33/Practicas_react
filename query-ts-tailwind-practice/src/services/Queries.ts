@@ -14,3 +14,9 @@ export const getList = async ({ pageParam = 1 }): Promise<Response> => {
     next: pageParam + 1,
   };
 };
+
+export const getRandomImage = async (id:number ):Promise<AxiosResponse<any, any>> => {
+  const res = await axios.get(`https://picsum.photos/id/${id}/info`);
+  console.log(res)
+  return res;
+};
