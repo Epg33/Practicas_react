@@ -7,7 +7,6 @@ type Response = {
 
 export const getList = async ({pageParam=1}):Promise<Response> => {
     const res = await axios.get(`https://picsum.photos/v2/list?page=${pageParam}&limit=30`)
-    console.log(res);
     return {
       res: res,
       next: pageParam+1
