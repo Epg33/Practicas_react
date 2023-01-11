@@ -1,5 +1,5 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import { List, Random } from './pages'
+import { Gif, List, Random } from './pages'
 
 function App() {
   return (
@@ -7,6 +7,7 @@ function App() {
       <Routes>
         <Route path='/' element={<List />}></Route>
         <Route path='/random' element={<Random />}></Route>
+        <Route path='/gif' element={<Gif />}></Route>
       </Routes>
     </Router>  
   )
