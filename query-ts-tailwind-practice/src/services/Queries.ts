@@ -31,3 +31,19 @@ export const getRandomGif = async (): Promise<AxiosResponse<any, any>> => {
   console.log(res.data.data.images.original);
   return res;
 };
+
+export const getStickersList = async ():Promise<AxiosResponse<any, any>> => {
+  const res: AxiosResponse<any, any> = await axios.get(
+    'https://api.giphy.com/v1/stickers/packs/3138?api_key=VheOOBBewWsnwHzrfrAbrhAxU46QeNLW'
+  )
+  console.log(res);
+  return res;
+}
+
+export const getSearchedGif = async (query:string):Promise<AxiosResponse<any, any>> => {
+  const res:AxiosResponse<any, any> = await axios.get(
+    `https://api.giphy.com/v1/gifs/search?api_key=VheOOBBewWsnwHzrfrAbrhAxU46QeNLW&q=${query}&limit=20&offset=0&rating=g&lang=en`
+  )
+  console.log(res);
+  return res;
+}
