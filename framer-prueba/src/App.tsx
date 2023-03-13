@@ -24,14 +24,14 @@ const variants = {
 function App() {
   // const y = useMotionValue<number>(0)
   // const bgColor = useTransform(y, [-100, 0, 100], ['#fff', '#999', '#000']);
-  const [align, setAlign] = useState<string>('left');
+  const [align, setAlign] = useState<string>('flex-start');
   return (
     <>
       <main className='w-full h-screen flex flex-col justify-center items-center gap-4 bg-cyan-500'>
-        <motion.h1 layout>
-          <p style={{textAlign: align}}>Hola</p>
-        </motion.h1>
-        <button onClick={()=>setAlign('right')} className='w-28 bg-slate-100 rounded-md'>change align text</button>
+        <div className='w-28 flex' style={{justifyContent: align}}>
+          <motion.h1 layout transition={{duration: 1}}>Hola</motion.h1>
+        </div>
+        <button onClick={()=>setAlign(align==='flex-start' ? 'flex-end' : 'flex-start')} className='w-28 bg-slate-100 rounded-md'>change align text</button>
         {/*<motion.div 
           drag='y'
           style={{backgroundColor: bgColor, y}}
