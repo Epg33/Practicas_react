@@ -5,8 +5,8 @@ function App() {
   return (
     <> 
       <h1 className='text-9xl'>HOME</h1>
-      <TaskList />
       <TaskForm />
+      <TaskList />
     </>
   )
 }
