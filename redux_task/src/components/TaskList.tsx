@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const TaskList = () => {
   const dispatch = useDispatch()
-  const tasks: TaskT[] = useSelector( state => state.tasks)
+  const tasks: TaskT[] = useSelector( (state: {tasks: TaskT[]}) => state.tasks)
   const handleDelete = (id: number) => {
     dispatch(deleteTask(id))
   }

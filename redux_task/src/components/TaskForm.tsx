@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 const TaskForm = () => {
   const navigate = useNavigate()
-  const tasks: TaskT[] = useSelector( state => state.tasks)
+  const tasks: TaskT[] = useSelector( (state: {tasks: TaskT[]}) => state.tasks)
   const[task, setTask] = useState({
     id: 0,
     title: '',
@@ -29,7 +29,7 @@ const TaskForm = () => {
     } else {
       dispatch(addTask({
         ...task,
-        id: tasks[tasks.length-1].id+1
+        id: tasks.length>0 ? tasks[tasks.length-1].id+1 : 1
       }))
     }
     navigate('/')
@@ -37,7 +37,8 @@ const TaskForm = () => {
 
   useEffect(()=> {
     if(params.id) {
-      setTask(tasks.find( tsk => tsk.id === Number(params.id)))
+      const taskFound = tasks.find( tsk => tsk.id === Number(params.id))
+      setTask(taskFound ? taskFound : task )
     }
   }, [])
   return (
